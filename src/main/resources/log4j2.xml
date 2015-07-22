@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%date{yyyy-MM-dd'T'HH:mm:ss.SSSZ} %-5level [%thread] %logger{3} - %m%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="spark.webserver.SparkServer" level="warn" />
+        <Logger name="jetty.server.Server" level="warn" />
+        <Logger name="jetty.server.ServerConnector" level="warn" />
+
+        <Root level="info">
+            <AppenderRef ref="STDOUT"/>
+        </Root>
+    </Loggers>
+</Configuration>
