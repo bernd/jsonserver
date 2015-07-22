@@ -47,10 +47,8 @@ public class Application {
         Spark.post("/*", (request, response) -> {
             if ("application/x-jackson-smile".equals(request.contentType())) {
                 parseSmile(request);
-            } else if (request.contentType().startsWith("application/json")) {
-                parseJson(request);
             } else {
-                log.warn("Unhandled content-type: {}", request.contentType());
+                parseJson(request);
             }
 
             return "ok\n";
